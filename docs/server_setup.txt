@@ -1,0 +1,24 @@
+
+
+#install virtualbox 4.2.1
+
+gem install vagrant
+
+
+build your own basebox
+gem install veewee  -pre
+
+
+veewee vbox define 'ubuntuLTS' 'ubuntu-12.04.1-server-amd64'
+veewee vbox build 'ubuntuLTS'
+vagrant basebox validate 'ubuntuLTS'
+vagrant basebox export 'ubuntuLTS'
+vagrant box add 'ubuntuLTS' 'ubuntuLTS.box'
+
+
+# see all your images
+tree -h --du ~/.vagrant.d
+
+
+
+
