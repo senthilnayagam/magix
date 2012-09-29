@@ -1,4 +1,9 @@
-PATH=/usr/local/openresty/nginx/sbin:$PATH
+PATH=/usr/local/openresty/nginx/sbin:/usr/local/bin/:$PATH
 export PATH
 
-nginx -p `pwd`/ -c conf/nginx.conf
+# echo "start redis"
+redis-server conf/redis.conf
+
+# echo "start nginx"
+ nginx -p `pwd`/ -c conf/nginx.conf
+
